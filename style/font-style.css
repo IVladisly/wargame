@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Pulsar - Original';
+    src: url('../source/font/PulsarOriginalRegular.eot');
+    src: local('Pulsar - Original'), local('PulsarOriginalRegular'),
+        url('../source/font/PulsarOriginalRegular.eot?#iefix') format('embedded-opentype'),
+        url('../source/font/PulsarOriginalRegular.woff2') format('woff2'),
+        url('../source/font/PulsarOriginalRegular.woff') format('woff'),
+        url('../source/font/PulsarOriginalRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../source/font/Roboto-Light.eot');
+    src: local('Roboto'), local('Roboto-Light'),
+        url('../source/font/Roboto-Light.eot?#iefix') format('embedded-opentype'),
+        url('../source/font/Roboto-Light.woff2') format('woff2'),
+        url('../source/font/Roboto-Light.woff') format('woff'),
+        url('../source/font/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../source/font/Roboto-Medium.eot');
+    src: local('Roboto'), local('Roboto-Medium'),
+        url('../source/font/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../source/font/Roboto-Medium.woff2') format('woff2'),
+        url('../source/font/Roboto-Medium.woff') format('woff'),
+        url('../source/font/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../source/font/Roboto-Bold.eot');
+    src: local('Roboto'), local('Roboto-Bold'),
+        url('../source/font/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../source/font/Roboto-Bold.woff2') format('woff2'),
+        url('../source/font/Roboto-Bold.woff') format('woff'),
+        url('../source/font/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'AireExterior';
+    src: url('../source/font/AireExterior.eot');
+    src: local('AireExterior'), local('AireExterior'),
+        url('../source/font/AireExterior.eot?#iefix') format('embedded-opentype'),
+        url('../source/font/AireExterior.woff2') format('woff2'),
+        url('../source/font/AireExterior.woff') format('woff'),
+        url('../source/font/AireExterior.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
