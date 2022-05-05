@@ -114,3 +114,14 @@ function slider_timer (){
 }
 slider_timer();
 
+// rate content script
+const rate_item = document.querySelectorAll(".rate__item");
+const rate_button = document.querySelectorAll(".item__button");
+for(let i = 0; i < rate_button.length; i++){
+	rate_button[i].addEventListener('click', ()=>{
+		for(let a = 0; a < rate_button.length; a++){
+			rate_item[a].classList.remove("selected");	
+		}	
+		rate_item[i].classList.add("selected");
+	});
+}

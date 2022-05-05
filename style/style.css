@@ -307,8 +307,10 @@ header {
 	color: rgba(171, 171, 171, 1);
 }
 .scheme__item > img {
-	max-width: 100%;
-	margin-bottom: .8rem;
+	width: 50%;
+	height: auto;
+	object-fit: contain;
+	margin: 0  auto .8rem;
 }
 .scheme__line {
 	background-color: rgba(87, 214, 255, 1);
@@ -316,4 +318,88 @@ header {
 	width: 3.5rem;
 	align-self: center;
 	margin-bottom: 2rem;
+}
+/*section rate */
+.section-rate {
+	margin-top: 9.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+.rate__block {
+	display: flex;
+}
+.rate__item {
+	flex-basis: 33.333%;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 1fr 1fr 3fr 1fr;
+	grid-template-areas: 
+	"rate_title"
+	"rate_subtitle"
+	"rate_about"
+	"rate_button";	
+	padding: 76px 47px 47px;
+	margin: 0 10px 16px;
+	background-color: rgba(31, 38, 49, 1);
+	border-radius: .3rem;
+	transition: .4s;
+
+}
+.selected{
+	background-color: rgba(0, 197, 255, 1);
+	box-shadow: 0px -10px 20px 0px rgb(0 197 255);
+}
+.selected > .item__inner-about > p , .rate__item.selected > *{
+	color: rgba(20, 28, 36, 1);
+}
+.selected > .item__button {
+	background-color: rgba(20, 28, 36, 1);
+	color: rgba(255, 255, 255, 1); 
+}
+.rate-item__title {
+	grid-area: rate_title;
+	color: rgba(255, 255, 255, 1);
+	font-size: 36px;
+	font-weight: 700;
+	font-family: 'Roboto';
+}
+.item__subtitle {
+	grid-area: rate_subtitle;
+	color: rgba(255, 255, 255, 1);
+	font-weight: 500;
+	font-size: 1.5rem;
+	margin-top: 1.2rem;
+}
+.item__inner-about {
+	grid-area: rate_about;
+	margin-top: 1.5rem;
+	color: rgba(255, 255, 255, 1);
+}
+.inner__text {
+	color: rgba(171, 171, 171, 1);
+	margin-bottom: .4rem;
+	font-size: 1.25rem;
+}
+.item__button {
+	grid-area: rate_button;
+	font-family: 'AireExterior';
+	font-weight: 400;
+	font-size: 1.5rem;
+	background-color: rgba(0, 197, 255, 1);
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding: .9rem;
+	border: none;
+	border-radius: .3rem;
+}
+#rate-span {
+	width: 50%;
+	height: 1px;
+	margin: 3rem auto 0;
+	background-color: rgba(0, 197, 255, 1);
+	border-radius: .2rem; 
 }
