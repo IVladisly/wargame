@@ -197,8 +197,65 @@
 			 	</div>
 			</div>				
 		</section>
-
+		<section class="section-location">
+			<div class="section__item__span fast-start__span">
+				<span></span>
+				<p> Игровые сервера на карте </p>
+			</div>
+			<h2 class="item__title"> Карта локаций </h2>
+			<div class="location__image-block">
+				<img src="source/image/ukraine.png" alt="ukraine location map" class="location__image">
+				<div class="image-shadow"></div>
+				<div class="image-point" id="point_1"></div>
+				<div class="image-point" id="point_2"></div>
+				<div class="image-point" id="point_3"></div>
+				<div class="image-point" id="point_4"></div>
+				<div class="image-point" id="point_5"></div>
+												
+				<div class="image-line"></div>
+				<p class="line-text"> Киев </p>
+			</div>
+		</section>
 	</main>
+	<footer>
+		<div class="footer__content">
+			<div class="footer__item">
+				<div class="item__logo">
+					<a href="#" tabindex="0">
+						<svg class="footer_logo" width="48" height="41" viewBox="0 0 48 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M27.9149 24.0279H19.9118C19.824 24.0279 19.7441 24.0852 19.7122 24.1671L12.1883 40.7049C12.1324 40.8523 12.2362 41.0079 12.388 40.9997H35.4228C35.5745 40.9997 35.6704 40.8359 35.6224 40.6967L28.0986 24.159C28.0746 24.0852 27.9948 24.0279 27.9149 24.0279Z" fill="#none"/>
+							<path d="M12.2922 36.2899L18.8176 22.0538C18.8336 22.0129 18.8416 21.9637 18.8256 21.9146L9.38487 1.15026C9.32098 0.904527 8.96954 0.937291 8.96954 1.1994L11.8928 36.2079C11.8768 36.4373 12.2043 36.511 12.2922 36.2899Z" fill="#none"/>
+							<path d="M0.591141 13.8382L6.74919 0.0936014C6.87699 -0.0866016 7.14056 0.0116907 7.13257 0.232849L10.3753 38.2721C10.3673 38.5014 10.0559 38.5669 9.96799 38.354L0.231722 16.9098C-0.17562 15.8941 -0.0398394 14.731 0.591141 13.8382Z" fill="#none"/>
+							<path d="M35.934 36.2079L38.8573 1.19936C38.8573 0.945438 38.5058 0.904483 38.4419 1.15021L29.0012 21.9145C28.9852 21.9637 28.9932 22.0128 29.0092 22.0538L35.5346 36.2898C35.6225 36.511 35.95 36.4372 35.934 36.2079Z" fill="#none"/>
+							<path d="M47.5872 16.9098L37.8509 38.354C37.7631 38.5751 37.4516 38.5096 37.4436 38.272L40.6863 0.232827C40.6783 0.0116685 40.9419 -0.0784328 41.0697 0.0935792L47.2357 13.8382C47.8667 14.731 47.9945 15.8941 47.5872 16.9098Z" fill="#none"/>
+						</svg>
+					</a>	
+					<h2 class="logo_title"> WARPLAY.CLOUD </h2>
+				</div>
+				<p class="footer__text"> 2022. All rights reserved. </p>
+				<p class="footer__text"> Created by IVladisly </p>
+			</div>
+			<div class="footer__item">
+				<a href="#"> Политика конфиденциальности </a>
+				<a href="#"> Файлы Coocie </a>
+				<div class="item__social">
+					<a href="#" class="social-link">
+						<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+						<rect width="17" height="17" fill="url(#pattern0)"/>
+							<defs>
+								<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+								<use xlink:href="#image0_99_160" transform="scale(0.01)"/>
+								</pattern>
+								<image id="image0_99_160" width="100" height="100" xlink:href="data:image/png;base64,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"/>
+							</defs>
+						</svg>
+					</a>
+					<a href="#" class="social-link"></a>
+					<a href="#" class="social-link"></a>
+				</div>
+			</div>
+		</div>
+	</footer>
 	<script src="script.js"></script>
 </body>
 </html>
