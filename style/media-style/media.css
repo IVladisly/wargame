@@ -30,6 +30,7 @@
 	}
 	.rate__item {
 		padding: 3rem 1.2rem;
+		grid-template-rows: .5fr .5fr 2fr .8fr;
 	}
 	.rate-item__title {
 		font-size: 1.5rem;
@@ -58,6 +59,11 @@
 		padding: 0 .5rem; 
 	}
 	/*section about work*/
+	.item__link-block {
+		display: flex;
+		justify-content: center;
+	}
+
 	.section-about-work {
 	grid-template-areas:
 		"content_top"
@@ -200,7 +206,7 @@
 		font-size: 1rem;
 	}
 	.rate__block {
-		width: 100%;
+		width: 80%;
 	}
 	.rate__item {
 		padding: 1rem 2.5rem;
