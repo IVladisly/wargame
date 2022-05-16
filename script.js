@@ -132,20 +132,20 @@ const button_line = document.querySelectorAll('.line-button');
 const header_nav_main = document.querySelector(".header-navigation-main");
 const nav_main = document.querySelector(".navigation__link");
 const logo_main = document.querySelector(".navigation__logo");
-const header_link = document.querySelectorAll('.link__item-nav');
-for ( let link_item of header_link){
-	link_item.addEventListener('click', function (event){
-		event.preventDefault();
-		const blockID = link_item.getAttribute('href');
-		document.querySelector('' + blockID).scrollIntoView({
-			behavior: "smooth",
-			block: "start"
-		})
-		if (window.screen.width <= 844){
-			header_nav_main.style.transform = 'translateY(-100%)';
-		}
-	})
-}
+// const header_link = document.querySelectorAll('.link__item-nav');
+// for ( let link_item of header_link){
+// 	link_item.addEventListener('click', function (event){
+// 		event.preventDefault();
+// 		const blockID = link_item.getAttribute('href');
+// 		document.querySelector('' + blockID).scrollIntoView({
+// 			behavior: "smooth",
+// 			block: "start"
+// 		})
+// 		if (window.screen.width <= 844){
+// 			header_nav_main.style.transform = 'translateY(-100%)';
+// 		}
+// 	})
+// }
 
 header_nav_button.addEventListener('click', ()=>{
 	header_nav_main.style.transform = 'translateY(0)';

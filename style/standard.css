@@ -1,0 +1,22 @@
+body {
+	margin: 0 auto;
+	padding: 0;
+	background-color: var(--color-content_body);
+	font-family: 'Roboto';
+}
+* {
+	margin: 0;
+	padding: 0;	 
+}
+main {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+:root {
+	--color-content_body: #141C24;
+	--color-content_text: #ABABAB;
+	--color-content_title: #ffffff;
+	--color-content_link: #00c5ff;
+	
+}
