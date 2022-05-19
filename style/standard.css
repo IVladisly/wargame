@@ -20,3 +20,9 @@ main {
 	--color-content_link: #00c5ff;
 	
 }
+a{
+	text-decoration: none;
+}
+use {
+	transition: .4s;
+}
