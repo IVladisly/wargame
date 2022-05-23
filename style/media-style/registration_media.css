@@ -17,9 +17,16 @@
 	._login-submit {
 		margin: 0;
 	}
+	.reg__submit-block {
+		
+	}
 
 }
 @media (max-width: 980px) {
+	.reg-main {
+		width: 90%;
+		grid-template-rows: 1fr 3fr .1fr;
+	}
 	.nav__button {
 		font-size: 2.2rem;
 	}
@@ -33,7 +40,7 @@
 		font-size: 1rem;
 	}
 	.form__policy-label {
-		font-size: .5rem;
+		font-size: 1.1vh;
 	}
 	.reg__use-social-block {
 		width: 60%;
@@ -46,6 +53,9 @@
 	}
 	.social__title-block {
 		display: none;
+	}
+	.social-use__social-main {
+		margin: 0;
 	}
 	.use-social__item {
 		flex-basis: 10%;
@@ -96,7 +106,7 @@
 }
 @media (max-width: 480px) {
 	.nav__back {
-		margin: .6rem 2rem 2rem;
+		margin: .6rem 1rem 2rem;
 	}
 	.nav__button {
 		margin: .5rem;
@@ -149,11 +159,14 @@
 		justify-items: center;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: .5fr 2fr 1fr;
 		grid-template-areas: 
 		"form-e form-p"
 		"form-sub form-sub";
 		margin-top: 0;
+	}
+	._event-login {
+		grid-template-rows: 1fr 1fr;
 	}
 	.form__in {
 		margin: 1.5rem 0;
@@ -174,8 +187,17 @@
 		grid-column-start: 1;
 		grid-column-end: 3;
 	}
+
 	.reg__submit-block {
-		display: none;
+		display: flex;
+		align-items: center;
+		width: 90%;
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	.form__policy-label {
+		font-size: 1.2vh;
+		text-align: center;
 	}
 }
 @media (max-height: 450px) and (orientation: landscape) {
@@ -192,5 +214,48 @@
 	.reg__use-social-block {
 		display: block;
 	}
+	
+}
+/* for iphone SE */
+
+@media (max-height: 320px) and (orientation: landscape) {
+	.reg__login-apple {
+		left: 85%;
+		width: 13%;
+		height: 20%;
+		border-radius: 50%;
+		justify-items: center;
+	}
+	.apple-account {
+		flex-basis: 100%;
+	}
+	.reg-ligin__content {
+		display: none;
+	}
+	.reg__form {
+		align-items: flex-start;
+		justify-items: center;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: .5fr 2fr 1fr;
+		grid-template-areas: 
+		"form-e form-p"
+		"form-sub form-sub";
+		margin-top: 0;
+	}
+	._event-login {
+		grid-template-rows: .5fr 1fr;
+	}
+	.form__in {
+		margin: 0;
+		width: 90%;
+		height: 3rem;
+	}
+	.form__submit {
+		width: 40%;
+		height: 2.5rem;
+		margin: 1.2rem 0 0;
+	}
+	
 	
 }

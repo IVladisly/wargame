@@ -1,4 +1,4 @@
-const slider_block = document.querySelector('.header-slider-main');
+const slider_block = document.querySelector('.header__slider-main');
 const slider_line = document.querySelector('.slider__line');
 const slider_item = document.querySelectorAll('.slider-item');
 const slider_image = document.querySelectorAll('.item-image');
@@ -6,6 +6,7 @@ const item_span = document.querySelectorAll('.item-span');
 const slider_button = document.querySelectorAll('.item-content_button');
 const item_text = document.querySelectorAll('.item-content_text');
 const item_title = document.querySelectorAll('.item-content_title');
+const header_button_link = document.querySelectorAll('.item-content_button-link');
 const slider_transform = 100 / slider_item.length;
 let count = 0;
 let back_count = 0.8;
@@ -61,6 +62,7 @@ for (let i = 0; i < slider_item.length; i++) {
 	let slider__slide_inner = document.createElement('span'); 
 	slider__slide_inner.className = "slider__slide_inner";
 	current_slide[i].append(slider__slide_inner);
+	current_slide[i].setAttribute("tabindex", "0");
 }
 let current_slide_inner = document.querySelectorAll('.slider__slide_inner');
 current_slide_inner[0].classList.add('current');
@@ -81,15 +83,19 @@ item_span[0].classList.add('active');
 item_text[0].classList.add('active');
 item_title[0].classList.add('active');
 slider_button[0].classList.add('active');
+header_button_link[0].style.visibility = "visible";
+
 
 function header_slider (){
 	
-	if (count === slider_item.length - 1 & !slider_off) {
+	if (count === slider_item.length - 1 && !slider_off) {
 		slider_block.style.boxShadow = "0px 0px 60px #09bdf200";
 		slider_line.style.transition = back_count * slider_item.length + 's';
 		slider_line.style.transform = 'translateY(0%)';
 		current_slide_inner[count].classList.remove('current');
 		current_slide_inner[0].classList.add('current');
+		header_button_link[count].style.visibility = "hidden";
+		header_button_link[0].style.visibility = "visible";
 		count = 0;
 		setTimeout( ()=> {
 			slider_block.style.boxShadow = '0 0 60px #09BDF2';
@@ -98,8 +104,10 @@ function header_slider (){
 		slider_block.style.boxShadow = "0px 0px 60px #09bdf200";
 		count++;
 		slider_line.style.transition ='2s';
-		slider_line.style.transform = 'translateY(-' + slider_transform*count + '%)';
+		slider_line.style.transform = 'translateY(-' + slider_transform * count + '%)';
 		current_slide_inner[count].classList.add('current');
+		header_button_link[count].style.visibility = "visible";
+		header_button_link[count - 1].style.visibility = "hidden";
 		if (count > 0){
 			current_slide_inner[count - 1].classList.remove('current');
 		}
@@ -149,9 +157,11 @@ const logo_main = document.querySelector(".navigation__logo");
 
 header_nav_button.addEventListener('click', ()=>{
 	header_nav_main.style.transform = 'translateY(0)';
+	header_nav_main.style.visibility = "visible";
 })
 nav_menu_button.addEventListener('click', ()=>{
 	header_nav_main.style.transform = 'translateY(0)';
+	header_nav_main.style.visibility = "visible";
 })
 link_button.addEventListener('click', header_media);
 
@@ -164,11 +174,13 @@ let window_event = document.addEventListener('scroll', window_scroll);
 
 function window_scroll() {
 	if (window.scrollY > slider_block.offsetHeight && window.screen.width >= 844){
-		header_nav_main.style.transform = 'translateY(0)';	
+		header_nav_main.style.transform = 'translateY(0)';
+		header_nav_main.style.visibility = "visible";	
 	}else if (window.screen.width <= 844){
 		return 0;
 	}else if (window.scrollY < slider_block.offsetHeight ){
 		header_nav_main.style.transform = 'translateY(-100%)';
+		header_nav_main.style.visibility = "hidden";
 	} 
 }
 	
@@ -194,6 +206,7 @@ function header_media (){
 }
 function header_media_mobile () {
 	header_nav_main.style.transform = 'translateY(-100%)';
+	header_nav_main.style.visibility = "hidden";
 }
 // rate content script
 const rate_item = document.querySelectorAll(".rate__item");

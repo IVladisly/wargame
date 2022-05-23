@@ -345,7 +345,7 @@
 	header {
 		padding: 0;
 	}
-	.header-slider-main {
+	.header__slider-main {
 		height: 100vh;
 		width: 100%;
 		border-radius: 0;
