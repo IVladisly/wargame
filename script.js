@@ -166,6 +166,7 @@ nav_menu_button.addEventListener('click', ()=>{
 link_button.addEventListener('click', header_media);
 
 if (window.screen.width < 844){
+	link_button.removeEventListener('click', header_media);
 	link_button.addEventListener('click', header_media_mobile);
 }
 
