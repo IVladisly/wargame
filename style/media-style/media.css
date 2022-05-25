@@ -119,11 +119,11 @@
 		z-index: 1000;
 	}
 	.header_title {
-		font-size: 1.5rem;
+		font-size: 3.4vh;
 	}
 	.header__logo-svg {
-		width: 50px;
-		height: 50px;
+		width: 10vh;
+		height: 10vh;
 	}
 	.navigation__logo {
 		margin: 0 auto;
@@ -136,7 +136,7 @@
 		width: 100%;
 	}
 	.link__item-nav {
-		font-size: 1.2rem;
+		font-size: 2.6vh;
 		margin: 0 0 1.5rem;
 		padding-bottom: .5rem;
 	}
@@ -147,6 +147,7 @@
 		display: block;
 		position: static;
 		margin: 0;
+		border: 1px solid white;
 	}
 	.line-button {
 		transform: rotate(-45deg) translateY(-4px);
@@ -163,8 +164,8 @@
 		border-bottom: 1px solid var(--color-content_link);
 	}
 	.social-header {
-		width: 40px;
-		height: 40px;
+		width: 6vh;
+		height: 6vh;
 		fill: var(--color-content_text);
 		margin: 0 1rem;
 	}
