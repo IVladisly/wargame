@@ -160,11 +160,9 @@ function media_button (window_width_var){
 	if (window_width_var <= 844) {
 		nav_menu_button.addEventListener('click', ()=> {
 			 header_nav_main.classList.add('active');
-			 document.body.style.overflow = "hidden";
 		})
 		media_desktop.addEventListener('click', ()=> {
 			header_nav_main.classList.remove('active');
-			document.body.style.overflow = "visible";
 		})
 	}else {
 		return 0;
@@ -180,29 +178,19 @@ let scroll_event = document.addEventListener('scroll', ()=>{
 	let scroll_var = window.scrollY;
 	console.log("scrollY = " + window.scrollY);
 	console.log("width scroll " + window_width_var);
-	if (scroll_var < slider_block.offsetHeight && window_width_var >= 844){
-		header_nav_main.classList.remove('active');
+	if (scroll_var > slider_block.offsetHeight && window_width_var >= 844){
+		header_nav_main.classList.add('active');
+		alert(slider_block.offsetHeight);
 	}else if (window_width_var < 844){
 		header_nav_main.classList.remove('active');
 
 	}else {
-		header_nav_main.classList.add('active');
+		header_nav_main.classList.remove('active');
 	}
 
 
 
 }) 
-
-
-// button media mobile event
-
-
-
-// 
-
-
-
-
 
 
 
