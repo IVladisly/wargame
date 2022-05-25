@@ -178,12 +178,13 @@ let scroll_event = document.addEventListener('scroll', ()=>{
 	let scroll_var = window.scrollY;
 	console.log("scrollY = " + window.scrollY);
 	console.log("width scroll " + window_width_var);
-	if (scroll_var > 800){
-		header_nav_main.classList.add('active');
-	}else if (window_width_var < 844){
-		header_nav_main.classList.remove('active');
+	if ( window_width_var <= 844){
+		return 0;
+	}
 
-	}else {
+	if (scroll_var > 800 && window_width_var > 844){
+		header_nav_main.classList.add('active');
+	} else {
 		header_nav_main.classList.remove('active');
 	}
 
