@@ -23,6 +23,7 @@ header {
 .header-navigation-main.active {
 	transform: translateY(0);
 	visibility: visible;
+	background-color: red;
 }
 .header_title {
 	color: #57d6ff;

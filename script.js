@@ -160,7 +160,7 @@ window.addEventListener('resize', ()=>{
 let scroll_event = document.addEventListener('scroll', ()=>{
 	let scroll_var = window.scrollY;
 
-	if (window.screen.width >= 844){
+	if (window.screen.width >= 844 && slider_block.offsetHeight < scroll_var){
 		header_nav_main.classList.add("active");
 	} else {
 		header_nav_main.classList.remove("active");
