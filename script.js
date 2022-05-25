@@ -156,13 +156,12 @@ const logo_main = document.querySelector(".navigation__logo");
 // }
 
 header_nav_button.addEventListener('click', ()=>{
-	header_nav_main.style.transform = 'translateY(0)';
-	header_nav_main.style.visibility = "visible";
+	header_nav_main.classList.add("active");
 })
 nav_menu_button.addEventListener('click', ()=>{
-	header_nav_main.style.transform = 'translateY(0)';
-	header_nav_main.style.visibility = "visible";
+	header_nav_main.classList.add("active");
 })
+
 link_button.addEventListener('click', header_media);
 
 if (window.screen.width < 844){
@@ -170,19 +169,26 @@ if (window.screen.width < 844){
 	link_button.addEventListener('click', header_media_mobile);
 }
 
-let header_height = slider_block.offsetHeight;
-let window_event = document.addEventListener('scroll', window_scroll);
+let window_event = document.addEventListener('scroll', header_navigation_open);
 
-function window_scroll() {
-	if (window.scrollY > slider_block.offsetHeight && window.screen.width >= 844){
-		header_nav_main.style.transform = 'translateY(0)';
-		header_nav_main.style.visibility = "visible";	
-	}else if (window.screen.width <= 844){
-		return 0;
-	}else if (window.scrollY < slider_block.offsetHeight ){
-		header_nav_main.style.transform = 'translateY(-100%)';
-		header_nav_main.style.visibility = "hidden";
-	} 
+// function window_scroll() {
+// 	if (window.scrollY > slider_block.offsetHeight && window.screen.width >= 844){
+// 		header_nav_main.style.transform = 'translateY(0)';
+// 		header_nav_main.style.visibility = "visible";	
+// 	}else if (window.screen.width <= 844){
+// 		return 0;
+// 	}else if (window.scrollY < slider_block.offsetHeight ){
+// 		header_nav_main.style.transform = 'translateY(-100%)';
+// 		header_nav_main.style.visibility = "hidden";
+// 	} 
+// }
+
+function header_navigation_open (){
+	if (window.screen.width >= 844 && window.scrollY > slider_block.offsetHeight){
+		header_nav_main.classList.add("active");
+	}else {
+		header_nav_main.classList.remove("active");
+	}
 }
 	
 function header_media (){
@@ -205,9 +211,8 @@ function header_media (){
 		return 0;
 	}
 }
-function header_media_mobile () {
-	header_nav_main.style.transform = 'translateY(-100%)';
-	header_nav_main.style.visibility = "hidden";
+function header_media_mobile (){
+	header_nav_main.classList.remove("active");	
 }
 // rate content script
 const rate_item = document.querySelectorAll(".rate__item");

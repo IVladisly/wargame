@@ -20,6 +20,10 @@ header {
 	transition: .4s;
 	visibility: hidden;
 }
+.header-navigation-main.active {
+	transform: translateY(0);
+	visibility: visible;
+}
 .header_title {
 	color: #57d6ff;
 	margin-left: 2rem;

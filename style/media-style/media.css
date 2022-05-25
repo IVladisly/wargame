@@ -120,7 +120,6 @@
 		grid-template-rows: 15% 60% 15% 10%;
 		grid-template-columns: 100%;
 		z-index: 1000;
-		visibility: visible;
 	}
 	.header_title {
 		font-size: 3.4vh;
