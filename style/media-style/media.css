@@ -120,8 +120,7 @@
 		grid-template-rows: 15% 60% 15% 10%;
 		grid-template-columns: 100%;
 		z-index: 1000;
-		transform: translateY(-100%);
-		visibility: hidden;
+		
 	}
 	._media-desktop {
 		display: flex;

@@ -18,7 +18,7 @@ header {
 	z-index: 999;
 	transition: .4s;
 	transform: translateY(-100%);
-	visibility: visible;
+	/* visibility: hidden; */
 }
 .header-navigation-main.active {
 	transform: translateY(0);
