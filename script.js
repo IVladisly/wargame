@@ -140,68 +140,75 @@ const logo_main = document.querySelector(".navigation__logo");
 // 	})
 // }
 
+let window_width_var = window.screen.width;
+console.log("sceen width = " + window_width_var);
 
 window.addEventListener('resize', ()=>{
+	window_width_var = window.screen.width;
+	button_nav_media(window_width_var);
 	setTimeout( ()=> {
 		slider_size ();
 	}, 500)
-	 button_desktop ();
 });
 
-function button_desktop (){
-
-	if (window.screen.width < 844){
-		link_button.removeEventListener('click', header_media);
-		link_button.addEventListener('click', header_media_mobile);
-
-	} else if (window.screen.width < 980 && window.screen.width > 844) {
-		link_button.removeEventListener('click', header_media_mobile);
-		link_button.addEventListener('click', header_media);
-	} else {
-		link_button.removeEventListener('click', header_media);
-		link_button.removeEventListener('click', header_media_mobile);
-	}
-}
-
- button_desktop ();
-
-header_nav_button.addEventListener('click', ()=>{
-	header_nav_main.classList.add("active");
-})
-
-nav_menu_button.addEventListener('click', ()=>{
-	header_nav_main.classList.add("active");
-})
 
 
 
 
 
-let window_event = document.addEventListener('scroll', ()=> {
-	if (window.screen.width >= 844){
+
+let scroll_event = document.addEventListener('scroll', ()=>{
+	let scroll_var = window.scrollY;
+
+	if (window.screen.width >= 844 && slider_block.offsetHeight < scroll_var){
 		header_nav_main.classList.add("active");
-	}else {
+	} else {
 		header_nav_main.classList.remove("active");
 	}
-});
+
+
+
+	console.log("scrollY = " + window.scrollY);
+}) 
+// button media mobile event
+
+function button_nav_media (window_width_var) {
 	
-function header_media (){
-	if(window.screen.width < 980 && window.screen.width > 844 ) {
-		nav_main.classList.toggle('active');
-		logo_main.classList.toggle('active');
-		button_line[0].classList.toggle('active');
-		button_line[1].classList.toggle('active');
-	}else {
-		nav_main.classList.remove('active');
-		logo_main.classList.remove('active');
-		button_line[0].classList.remove('active');
-		button_line[1].classList.remove('active');
-	}
+
+	if( window_width_var < 980 && !link_button.classList.contains('active')) {
+		link_button.classList.add('active');
+		link_button.addEventListener('click',  button_media_mobile )
+
+	} else if (window_width_var >= 980 || window_width_var <= 844){
+		link_button.classList.remove('active');
+		link_button.removeEventListener('click', button_media_mobile )
+		if (nav_main.classList.contains('active') ){
+			 button_media_mobile ();
+		}
+	} 
+
 }
 
-function header_media_mobile (){
-	header_nav_main.classList.remove("active");	
+if (window_width_var < 980 && window_width_var > 844 ){
+	button_nav_media(window_width_var);
 }
+
+function button_media_mobile () {
+	console.log("click");
+	nav_main.classList.toggle('active');
+	logo_main.classList.toggle('active');
+	button_line[0].classList.toggle('active');
+	button_line[1].classList.toggle('active');
+	
+}
+// 
+
+
+
+
+
+
+
 // rate content script
 const rate_item = document.querySelectorAll(".rate__item");
 const rate_button = document.querySelectorAll(".item__button");

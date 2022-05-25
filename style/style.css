@@ -16,8 +16,8 @@ header {
 	right: 0;
 	background-color: var(--color-content_body);
 	z-index: 999;
-	transform: translateY(-100%);
 	transition: .4s;
+	transform: translateY(-100%);
 	visibility: hidden;
 }
 .header-navigation-main.active {
@@ -105,6 +105,9 @@ header {
 ._media-desktop {
 	display: none;
 	z-index: 1001;
+}
+._media-desktop.active {
+	display: flex;
 }
 ._media-mobile {
 	position: fixed;
