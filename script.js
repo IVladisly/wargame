@@ -176,7 +176,7 @@ media_button (window_width_var);
 
 
 
-document.addEventListener('scroll', ()=>{
+window.addEventListener('scroll', ()=>{
 	let scroll_var = window.scrollY;
 	console.log("scrollY = " + window.scrollY);
 	console.log("width scroll " + window_width_var);
@@ -185,16 +185,14 @@ document.addEventListener('scroll', ()=>{
 	}
 
 	if (scroll_var > slider_block.offsetHeight && window_width_var > 844){
-		// header_nav_main.classList.add('active');
-		header_nav_main.style.transform = "translateY(0)";
+		header_nav_main.classList.add('active');
 	} else {
-		// header_nav_main.classList.remove('active');
-		header_nav_main.style.transform = "translateY(-100%)";
+		header_nav_main.classList.remove('active');
 	}
 
-
-
 }) 
+
+
 
 
 
