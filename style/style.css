@@ -17,14 +17,14 @@ header {
 	background-color: var(--color-content_body);
 	z-index: 999;
 	transition: .4s;
-	transform: translateY(0);
+	transform: translateY(-100%);
 	visibility: visible;
 }
-/* .header-navigation-main.active {
+.header-navigation-main.active {
 	transform: translateY(0);
 	visibility: visible;
-	background-color: red;
-} */
+	
+}
 .header_title {
 	color: #57d6ff;
 	margin-left: 2rem;
@@ -49,10 +49,6 @@ header {
 	align-items: center;
 	margin-right: 10.7rem;
 	transition: .5s;
-}
-.navigation__link.active {
-	transform: translateX(-40%);
-
 }
 .navigation__logo {
 	transform: translateX(0);
@@ -100,18 +96,15 @@ header {
 	height: 30px;
 	margin-right: 1.5rem;
 	flex-direction: column;
-	position: absolute;
-	right: 5%;
 }
 ._media-desktop {
 	display: none;
 	z-index: 1001;
 }
-._media-desktop.active {
-	display: flex;
-}
+
 ._media-mobile {
 	position: fixed;
+	right: 5%;
 	top: 5%;
 	display: none;
 }

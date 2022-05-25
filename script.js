@@ -120,7 +120,7 @@ slider_timer();
 //header navigation 
 const header_nav_button = document.querySelector(".header-nav-button");
 const nav_menu_button = document.querySelector("._media-mobile");
-const link_button = document.querySelector("._media-desktop");
+const media_desktop = document.querySelector("._media-desktop");
 const button_line = document.querySelectorAll('.line-button');
 const header_nav_main = document.querySelector(".header-navigation-main");
 const nav_main = document.querySelector(".navigation__link");
@@ -142,65 +142,58 @@ const logo_main = document.querySelector(".navigation__logo");
 
 let window_width_var = window.screen.width;
 console.log("sceen width = " + window_width_var);
-
+ 
 window.addEventListener('resize', ()=>{
 	window_width_var = window.screen.width;
-	button_nav_media(window_width_var);
+	media_button (window_width_var);
 	setTimeout( ()=> {
 		slider_size ();
 	}, 500)
 });
 
+header_nav_button.addEventListener('click', ()=>{
+	 header_nav_main.classList.add('active');
+})
 
 
+function media_button (window_width_var){
+	if (window_width_var <= 844) {
+		nav_menu_button.addEventListener('click', ()=> {
+			 header_nav_main.classList.add('active');
+		})
+		media_desktop.addEventListener('click', ()=> {
+			header_nav_main.classList.remove('active');
+		})
+	}else {
+		return 0;
+	}
+}
+
+media_button (window_width_var);
 
 
 
 
 let scroll_event = document.addEventListener('scroll', ()=>{
 	let scroll_var = window.scrollY;
-
-	if (window.screen.width >= 844 && slider_block.offsetHeight < scroll_var){
-		header_nav_main.classList.add("active");
-	} else {
-		header_nav_main.classList.remove("active");
+	console.log("scrollY = " + window.scrollY);
+	console.log("width scroll " + window_width_var);
+	if (scroll_var < slider_block.offsetHeight && window_width_var > 844){
+		console.log("scroll on");
+		header_nav_main.classList.remove('active');
+	}else {
+		header_nav_main.classList.add('active');
 	}
 
 
 
-	console.log("scrollY = " + window.scrollY);
 }) 
+
+
 // button media mobile event
 
-function button_nav_media (window_width_var) {
-	
 
-	if( window_width_var < 980 && !link_button.classList.contains('active')) {
-		link_button.classList.add('active');
-		link_button.addEventListener('click',  button_media_mobile )
 
-	} else if (window_width_var >= 980 || window_width_var <= 844){
-		link_button.classList.remove('active');
-		link_button.removeEventListener('click', button_media_mobile )
-		if (nav_main.classList.contains('active') ){
-			 button_media_mobile ();
-		}
-	} 
-
-}
-
-if (window_width_var < 980 && window_width_var > 844 ){
-	button_nav_media(window_width_var);
-}
-
-function button_media_mobile () {
-	console.log("click");
-	nav_main.classList.toggle('active');
-	logo_main.classList.toggle('active');
-	button_line[0].classList.toggle('active');
-	button_line[1].classList.toggle('active');
-	
-}
 // 
 
 
