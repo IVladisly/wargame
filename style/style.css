@@ -17,14 +17,14 @@ header {
 	background-color: var(--color-content_body);
 	z-index: 999;
 	transition: .4s;
-	transform: translateY(-100%);
-	visibility: hidden;
+	transform: translateY(0);
+	visibility: visible;
 }
-.header-navigation-main.active {
+/* .header-navigation-main.active {
 	transform: translateY(0);
 	visibility: visible;
 	background-color: red;
-}
+} */
 .header_title {
 	color: #57d6ff;
 	margin-left: 2rem;

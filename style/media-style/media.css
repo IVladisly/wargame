@@ -12,10 +12,6 @@
 }
 
 @media (max-width: 1200px) {
-	.header-navigation-main{
-		transform: translateY(0);
-		visibility: visible;
-	}
 	.navigation__logo {
 		margin: 2rem;
 	}
