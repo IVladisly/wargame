@@ -184,33 +184,36 @@ function media_button (window_width_var){
 				header_nav_main.classList.remove('active');
 			}
 		})
-	}else {
-		return 0;
 	}
+		
+	
 }
 
 media_button (window_width_var);
 
-const span = document.querySelectorAll('.section__item__span');
-const item_title_test = document.querySelectorAll('.item__title');
-const item_text_test = document.querySelectorAll('.item__text');
-screen.orientation.addEventListener('change', header_nav_media);
+let span = document.querySelectorAll('.section__item__span');
+let item_title_test = document.querySelectorAll('.item__title');
+let item_text_test = document.querySelectorAll('.item__text');
 
-span[0].innerHTML = screen.orientation.type;
-item_title_test[0].innerHTML = screen.height;
-item_text_test[0].innerHTML =  screen.width;
+
+span[0].innerHTML = window.screen.width;
+item_title_test[0].innerHTML = window.screen.height;
+item_text_test[0].innerHTML = screen.orientation.type;
+
 
 function header_nav_media (){
 	
 	console.log(screen.orientation.type);
 
-	if (window.screen.height > 844 && screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"){
+	if (window.screen.height > 844){
 		window.addEventListener('scroll', navigation_header_visible);
 	} else {
 		window.removeEventListener('scroll', navigation_header_visible);
 	}
 	
 }
+
+screen.orientation.addEventListener('change', header_nav_media);
 
 function navigation_header_visible (){
 	let scroll_var = window.pageYOffset;
