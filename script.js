@@ -192,10 +192,13 @@ function media_button (window_width_var){
 media_button (window_width_var);
 
 const span = document.querySelectorAll('.section__item__span');
+const item_title_test = document.querySelectorAll('.item__title');
 screen.orientation.addEventListener('change', header_nav_media);
 
 function header_nav_media (){
-	console.log("orientation is - " + screen.orientation.type);
+	span[0].innerHTML = screen.orientation.type;
+	item_title_test[0].innerHTML = window.screen.height + "   -   " + window.screen.width;
+
 	if (window.screen.height > 844 && screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"){
 		window.addEventListener('scroll', navigation_header_visible);
 	} else {
