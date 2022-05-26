@@ -189,15 +189,14 @@ function media_button (window_width_var){
 
 media_button (window_width_var);
 
-
+const span = document.querySelectorAll('.section__item__span');
 
 window.addEventListener('scroll', ()=>{
 	let scroll_var = window.pageYOffset;
 	console.log("scrollY = " + window.pageYOffset);
 	console.log("width scroll " + window_width_var);
 
-	alert("inner event offset = " + window.pageYOffset);
-	alert("inner event  int = " + scroll_var);
+	span[0].innerHTML =  window.pageYOffset;
 
 	if ( window_width_var <= 844){
 		return 0;
