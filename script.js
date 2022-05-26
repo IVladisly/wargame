@@ -190,7 +190,7 @@ function media_button (window_width_var){
 }
 
 media_button (window_width_var);
-
+const span = document.querySelector('.section__item');
 
 function header_nav_media (){
 
@@ -203,6 +203,15 @@ function header_nav_media (){
 }
 
 header_nav_media ();
+
+window.addEventListener('orientationchange', ()=>{
+	span.style.background = "red";
+	let orientation_int = window.screen.orientation.type;
+	console.log(orientation_int);
+	if (window.screen.orientation.type === "landscape-primary" || window.screen.orientation.type === "landscape-secondary"){
+		span.style.borderRadius = "50%";
+	}
+})
 
 function navigation_header_visible (){
 	let scroll_var = window.pageYOffset;
