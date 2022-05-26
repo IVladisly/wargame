@@ -151,6 +151,7 @@ console.log("sceen width = " + window_width_var);
 window.addEventListener('resize', ()=>{
 	window_width_var = window.screen.width;
 	media_button (window_width_var);
+	header_nav_media ();
 	setTimeout( ()=> {
 		slider_size ();
 	}, 500)
@@ -191,7 +192,7 @@ function header_nav_media (){
 
 }
 
-window.addEventListener('orientationchange', header_nav_media);
+
 
 function navigation_header_visible (){
 	let scroll_var = window.pageYOffset;
@@ -202,7 +203,7 @@ function navigation_header_visible (){
 	}
 }
 
-console.log(document.body.offsetWidth);
+
 
 // rate content script
 const rate_item = document.querySelectorAll(".rate__item");
