@@ -197,12 +197,12 @@ const item_text_test = document.querySelectorAll('.item__text');
 screen.orientation.addEventListener('change', header_nav_media);
 
 span[0].innerHTML = screen.orientation.type;
-item_title_test[0].innerHTML = window.screen.height;
-item_text_test[0].innerHTML =  window.screen.width;
+item_title_test[0].innerHTML = screen.height;
+item_text_test[0].innerHTML =  screen.width;
 
 function header_nav_media (){
 	
-	
+	console.log(screen.orientation.type);
 
 	if (window.screen.height > 844 && screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"){
 		window.addEventListener('scroll', navigation_header_visible);
