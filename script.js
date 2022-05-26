@@ -198,7 +198,7 @@ let item_text_test = document.querySelectorAll('.item__text');
 
 span[0].innerHTML = window.screen.width;
 item_title_test[0].innerHTML = window.screen.height;
-item_text_test[0].innerHTML = screen.orientation.type;
+item_text_test[0].innerHTML = window.screen.orientation.type;
 
 
 function header_nav_media (){
