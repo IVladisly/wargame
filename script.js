@@ -13,6 +13,18 @@ let back_count = 0.8;
 let slider_off = false;
 
 
+// when the window loaded
+
+window.addEventListener('load', DOM_loaded);
+
+
+function DOM_loaded (){
+	slider_timer ();
+	slider_size ();
+	console.log('page loaded');
+}
+
+
 
 function slider_size () {
 	for (let i = 0; i < slider_item.length; i++) {
@@ -20,7 +32,7 @@ function slider_size () {
 		slider_image[i].style.height = slider_block.offsetHeight + 'px';
 	}	
 }
-slider_size ();
+
 
 
 
@@ -30,7 +42,7 @@ for (let i = 0; i < slider_button.length;i++){
 		slider_off = true;
 	})
 	slider_button[i].addEventListener('mouseout', ()=> {
-		slider_off = false; //false -slider on
+		slider_off = false; 
 	})
 
 }
@@ -107,6 +119,7 @@ function header_slider (){
 }
 let timer = false;
 let header_interval;
+
 function slider_timer (){
 	if (!timer) {
 		header_interval = setInterval(header_slider, 6000);
@@ -116,7 +129,7 @@ function slider_timer (){
 		timer = false;
 	}
 }
-slider_timer();
+
 //header navigation 
 const header_nav_button = document.querySelector(".header-nav-button");
 const nav_menu_button = document.querySelector("._media-mobile");
@@ -158,13 +171,16 @@ header_nav_button.addEventListener('click', ()=>{
 
 function media_button (window_width_var){
 	if (window_width_var <= 844) {
-		nav_menu_button.addEventListener('click', ()=> {
-			 header_nav_main.classList.add('active');
+		nav_menu_button.addEventListener('click', (event)=> {
+			if(event.target.closest('button')){
+				header_nav_main.classList.add('active');
+			}
 			
 		})
-		media_desktop.addEventListener('click', ()=> {
-			header_nav_main.classList.remove('active');
-			
+		media_desktop.addEventListener('click', (event)=> {
+			if(event.target.closest('button')){
+				header_nav_main.classList.remove('active');
+			}
 		})
 	}else {
 		return 0;
@@ -175,16 +191,15 @@ media_button (window_width_var);
 
 
 
-
 window.addEventListener('scroll', ()=>{
 	let scroll_var = window.scrollY;
 	console.log("scrollY = " + window.scrollY);
 	console.log("width scroll " + window_width_var);
 	if ( window_width_var <= 844){
 		return 0;
-	}
+	} 
 
-	if (scroll_var > slider_block.offsetHeight && window_width_var > 844){
+	if (scroll_var > 600 && window_width_var > 844){
 		header_nav_main.classList.add('active');
 	} else {
 		header_nav_main.classList.remove('active');
