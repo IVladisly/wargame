@@ -180,8 +180,9 @@ function media_button (window_width_var){
 }
 
 
-const span = document.querySelector('.section__item');
+const span = document.querySelectorAll('.section__item__span');
 function header_nav_media (){
+	span[0].innerHTML = document.body.offsetWidth;
 	window.addEventListener('orientationchange', ()=>{
 		if (document.body.offsetWidth > 844){
 			window.addEventListener('scroll', navigation_header_visible);
@@ -192,8 +193,6 @@ function header_nav_media (){
 
 }
 
-
-	
 
 
 function navigation_header_visible (){
