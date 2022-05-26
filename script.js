@@ -195,6 +195,10 @@ const span = document.querySelectorAll('.section__item__span');
 const item_title_test = document.querySelectorAll('.item__title');
 screen.orientation.addEventListener('change', header_nav_media);
 
+span[0].innerHTML = screen.orientation.type;
+item_title_test[0].innerHTML = window.screen.height + "   -   " + window.screen.width;
+
+
 function header_nav_media (){
 	span[0].innerHTML = screen.orientation.type;
 	item_title_test[0].innerHTML = window.screen.height + "   -   " + window.screen.width;
