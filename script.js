@@ -22,6 +22,7 @@ function DOM_loaded (){
 	slider_timer ();
 	slider_size ();
 	console.log('page loaded');
+	 header_nav_media ();
 }
 
 
@@ -159,6 +160,7 @@ console.log("sceen width = " + window_width_var);
 window.addEventListener('resize', ()=>{
 	window_width_var = window.screen.width;
 	media_button (window_width_var);
+	 header_nav_media ();
 	setTimeout( ()=> {
 		slider_size ();
 	}, 500)
@@ -191,27 +193,23 @@ media_button (window_width_var);
 
 const span = document.querySelectorAll('.section__item__span');
 
-window.addEventListener('scroll', ()=>{
+function header_nav_media (){
+	if (window.screen.width > 844){
+		window.addEventListener('scroll', navigation_header_visible);
+	} else {
+		window.removeEventListener('scroll', navigation_header_visible);
+	}
+	
+}
+
+function navigation_header_visible (){
 	let scroll_var = window.pageYOffset;
-	console.log("scrollY = " + window.pageYOffset);
-	console.log("width scroll " + window_width_var);
-
-	span[0].innerHTML =  window.pageYOffset;
-
-	if ( window_width_var <= 844){
-		return 0;
-	} 
-
-	if (scroll_var > 600 && window_width_var > 844){
+	if (scroll_var > 600){
 		header_nav_main.classList.add('active');
 	} else {
 		header_nav_main.classList.remove('active');
 	}
-
-}) 
-
-
-
+}
 
 
 // rate content script
