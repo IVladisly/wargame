@@ -182,18 +182,16 @@ function media_button (window_width_var){
 
 const span = document.querySelectorAll('.section__item__span');
 function header_nav_media (){
-	span[0].innerHTML = document.body.offsetWidth;
-	window.addEventListener('orientationchange', ()=>{
-		if (document.body.offsetWidth > 844){
-			window.addEventListener('scroll', navigation_header_visible);
-		} else {
-			window.removeEventListener('scroll', navigation_header_visible);
-		}
-})
+	if (document.body.offsetWidth > 844){
+		window.addEventListener('scroll', navigation_header_visible);
+	} else {
+		window.removeEventListener('scroll', navigation_header_visible);
+	}
+
 
 }
-header_nav_media ();
 
+window.addEventListener('orientationchange', header_nav_media);
 
 function navigation_header_visible (){
 	let scroll_var = window.pageYOffset;
@@ -221,7 +219,7 @@ for(let i = 0; i < rate_button.length; i++){
 
 
 
-window.addEventListener('load', DOM_loaded);
+window.addEventListener('load', DOM_loaded, "once" : true);
 
 
 function DOM_loaded (){
