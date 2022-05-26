@@ -192,9 +192,11 @@ function media_button (window_width_var){
 media_button (window_width_var);
 
 const span = document.querySelectorAll('.section__item__span');
+screen.orientation.addEventListener('change', header_nav_media);
 
 function header_nav_media (){
-	if (window.screen.height > 844){
+	console.log("orientation is - " + screen.orientation.type);
+	if (window.screen.height > 844 && screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"){
 		window.addEventListener('scroll', navigation_header_visible);
 	} else {
 		window.removeEventListener('scroll', navigation_header_visible);
@@ -210,7 +212,7 @@ function navigation_header_visible (){
 		header_nav_main.classList.remove('active');
 	}
 }
-span[0].innerHTML = window.screen.height;
+
 
 // rate content script
 const rate_item = document.querySelectorAll(".rate__item");
