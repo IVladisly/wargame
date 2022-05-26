@@ -192,8 +192,8 @@ media_button (window_width_var);
 
 
 window.addEventListener('scroll', ()=>{
-	let scroll_var = window.scrollY;
-	console.log("scrollY = " + window.scrollY);
+	let scroll_var = window.pageYOffset;
+	console.log("scrollY = " + window.pageYOffset);
 	console.log("width scroll " + window_width_var);
 	if ( window_width_var <= 844){
 		return 0;
