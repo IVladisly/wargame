@@ -15,15 +15,6 @@ let slider_off = false;
 
 // when the window loaded
 
-window.addEventListener('load', DOM_loaded);
-
-
-function DOM_loaded (){
-	slider_timer ();
-	slider_size ();
-	console.log('page loaded');
-	header_nav_media ();
-}
 
 
 
@@ -160,7 +151,6 @@ console.log("sceen width = " + window_width_var);
 window.addEventListener('resize', ()=>{
 	window_width_var = window.screen.width;
 	media_button (window_width_var);
-    header_nav_media ();
 	setTimeout( ()=> {
 		slider_size ();
 	}, 500)
@@ -189,29 +179,22 @@ function media_button (window_width_var){
 	
 }
 
-media_button (window_width_var);
+
 const span = document.querySelector('.section__item');
-
 function header_nav_media (){
+	window.addEventListener('orientationchange', ()=>{
+		if (document.body.offsetWidth > 844){
+			window.addEventListener('scroll', navigation_header_visible);
+		} else {
+			window.removeEventListener('scroll', navigation_header_visible);
+		}
+})
 
-	if (window.screen.height > 844){
-		window.addEventListener('scroll', navigation_header_visible);
-	} else {
-		window.removeEventListener('scroll', navigation_header_visible);
-	}
-	
 }
 
-header_nav_media ();
 
-window.addEventListener('orientationchange', ()=>{
-	span.style.background = "red";
-	let orientation_int = window.screen.orientation.type;
-	console.log(orientation_int);
-	if (window.screen.orientation.type === "landscape-primary" || window.screen.orientation.type === "landscape-secondary"){
-		span.style.borderRadius = "50%";
-	}
-})
+	
+
 
 function navigation_header_visible (){
 	let scroll_var = window.pageYOffset;
@@ -222,6 +205,7 @@ function navigation_header_visible (){
 	}
 }
 
+console.log(document.body.offsetWidth);
 
 // rate content script
 const rate_item = document.querySelectorAll(".rate__item");
@@ -234,4 +218,17 @@ for(let i = 0; i < rate_button.length; i++){
 		}	
 		rate_item[i].classList.add("selected");
 	});
+}
+
+
+
+window.addEventListener('load', DOM_loaded);
+
+
+function DOM_loaded (){
+	slider_timer ();
+	slider_size ();
+	console.log('page loaded');
+	header_nav_media ();
+	media_button (window_width_var);
 }
