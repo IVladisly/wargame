@@ -160,7 +160,7 @@ console.log("sceen width = " + window_width_var);
 window.addEventListener('resize', ()=>{
 	window_width_var = window.screen.width;
 	media_button (window_width_var);
-	 header_nav_media ();
+    header_nav_media ();
 	setTimeout( ()=> {
 		slider_size ();
 	}, 500)
@@ -213,11 +213,11 @@ function header_nav_media (){
 	
 }
 
-screen.orientation.addEventListener('change', header_nav_media);
+window.screen.orientation.addEventListener('change', header_nav_media);
 
 function navigation_header_visible (){
 	let scroll_var = window.pageYOffset;
-	if (scroll_var > slider_block.offsetHeight){
+	if (scroll_var > 600){
 		header_nav_main.classList.add('active');
 	} else {
 		header_nav_main.classList.remove('active');
