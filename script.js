@@ -210,7 +210,7 @@ function navigation_header_visible (){
 		header_nav_main.classList.remove('active');
 	}
 }
-
+span[0].innerHTML = window.screen.width;
 
 // rate content script
 const rate_item = document.querySelectorAll(".rate__item");
