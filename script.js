@@ -192,7 +192,7 @@ function header_nav_media (){
 })
 
 }
-
+header_nav_media ();
 
 
 function navigation_header_visible (){
