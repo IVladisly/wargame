@@ -219,7 +219,7 @@ for(let i = 0; i < rate_button.length; i++){
 
 
 
-window.addEventListener('load', DOM_loaded, "once" : true);
+window.addEventListener('load', DOM_loaded, {"once" : true});
 
 
 function DOM_loaded (){
