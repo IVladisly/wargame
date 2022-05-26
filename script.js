@@ -213,7 +213,7 @@ function header_nav_media (){
 	
 }
 
-window.screen.orientation.addEventListener('change', header_nav_media);
+
 
 function navigation_header_visible (){
 	let scroll_var = window.pageYOffset;
