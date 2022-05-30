@@ -29,7 +29,7 @@
 				<form class="reg__form _event-logup" name="registraion" method="GET">
 					<input type="email" name="email" class="form__in email-in" required="required" placeholder="Почта/Телефон">
 					<input type="password" name="password" class="form__in password-in" required="required" placeholder="Пароль">
-					<button type="submit" value="logup" class="form__submit"> Зарегестрироваться </button>
+					<button type="button" value="logup" class="form__submit"> Зарегестрироваться </button>
 					<div class="reg__submit-block"> 
 						<input type="checkbox" name="policy" value="policy" id="submit-button" class="reg_policy-check" required="required">
 						<label for="submit-button" class="form__policy-label">
@@ -41,7 +41,7 @@
 					<input type="email" name="email" class="form__in email-in" required="required" placeholder="Почта/Телефон">
 					<input type="password" name="password" class="form__in password-in" required="required" placeholder="Пароль">
 					<div class="reg__login-submit"> 
-						<button type="submit" value="logup" class="form__submit _login-submit"> Войти </button>
+						<button type="button" value="logup" class="form__submit _login-submit"> Войти </button>
 						<label class="form__policy-label _login-label">						
 							<input type="checkbox" name="policy" value="policy" class="reg_policy-check">
 							Запомнить
@@ -139,6 +139,19 @@
 					</svg>
 				</a>
 			</div>	
+		</div>
+	</section>
+	<section class="confirm-email-alert">
+		<div class="alert__title">
+			<a href="../index.html" class="nav__back _back-alert">
+				<span class="back__line _top-line"></span>
+				<span class="back__line _bottom-line"></span>
+			</a>
+			<h2> На вашу почту отправлено подтверждение </h2>
+		</div>
+		<div class="alert_content">
+			<p>На Ваш почтовый ящик отправлено сообщение, содержащее ссылку для подтверждения правильности e-mail адреса. Пожалуйста, перейдите по ссылке для завершения подписки.</p>
+			<p>Если письмо не пришло в течение 15 минут, проверьте папку «Спам». Если письмо вдруг попало в эту папку, откройте письмо, нажмите кнопку «Не спам» и перейдите по ссылке подтверждения. Если же письма нет и в папке «Спам», попробуйте подписаться ещё раз. Возможно, вы ошиблись при вводе адреса.</p>
 		</div>
 	</section>
 	<script src="script/registration.js"></script>

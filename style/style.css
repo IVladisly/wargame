@@ -354,7 +354,8 @@ header {
 }
 .host_image{
 	width: 90%;
-	height: auto;
+	height: 100%;
+	margin-right: -5rem;
 	object-fit: contain;
 }
 .section__item{

@@ -4,6 +4,8 @@ let reg_line = document.querySelector(".reg__event-line");
 let login = document.querySelector("._event-login");
 let logup = document.querySelector("._event-logup");
 const apple_login = document.querySelector(".reg__login-apple");
+const confirm_email_section = document.querySelector(".confirm-email-alert");
+let button_confirm = document.querySelectorAll(".form__submit");
 button_login.style.opacity = "70%";
 apple_login.style.visibility = "hidden";
 
@@ -32,4 +34,11 @@ button_logup.addEventListener('click', function log_up(){
 	apple_login.style.opacity = "0";
 });
 
+
+for(let item of button_confirm){
+	item.addEventListener('click', ()=>{
+		confirm_email_section.classList.add("active");
+		console.log("accept");
+	}, {"once": true})
+}
 
